@@ -1,5 +1,26 @@
-# blender
-blender
+# Blender（3D Gaussian Splatting 魔改版）
 
-source code: https://projects.blender.org/BingYangHu/blender/src/branch/3dgs/
+本仓库为基于 **Blender 源码** 的定制构建，在官方能力之上集成了 **3D Gaussian Splatting（3DGS）** 的渲染与交互支持，并打包为可直接运行的 Blender 可执行程序。
 
+## 当前支持特性
+
+1. **Eevee：实时光栅化渲染 3DGS**  
+   在 Eevee 管线中可对 3DGS 进行实时栅格化绘制，便于视口预览与实时工作流。
+
+2. **Cycles：光线追踪渲染 3DGS**  
+   在 Cycles 路径下支持对 3DGS 的全局光照式光线追踪渲染，与场景其余几何体统一参与光照计算。
+
+3. **多设备后端**  
+   Cycles / 相关计算路径支持 **CPU**、**CUDA**、**OptiX** 三种后端，可按硬件与驱动选择。
+
+4. **Cycles 中 3DGS 的高级光学效果**  
+   - 支持 **3DGS 的阴影** 渲染；  
+   - 支持 **3DGS 物体的反射与折射**（与透明/镜面等材质交互时的表现）。
+
+5. **3DGS 与场景的遮挡关系**  
+   - **3DGS 物体可接收来自其他物体的阴影**；  
+   - 支持 **自遮挡** 等与深度/可见性相关的表现，使 splat 与场景融合更自然。
+
+---
+
+若需构建说明、依赖版本或与上游 Blender 的差分说明，可在此 README 后续章节中补充。
